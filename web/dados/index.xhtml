@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/WEB-INF/include/template.xhtml">
+        <ui:define name="body">
+            <h:panelGrid columns="2">
+                <h:outputText value="Nome"/>
+                <p:inputText value="#{contatoController.contato.nome}"/>
+
+                <h:outputText value="Email"/>
+                <p:inputText value="#{contatoController.contato.email}"/>
+
+                <h:outputText value="Telefone"/>
+                <p:inputText value="#{contatoController.contato.telefone}"/>
+
+                <p:commandButton value="adicionar" action="#{contatoController.addContato}" update="lista"/>
+        </h:panelGrid>
+
+            <p:dataTable id="lista" var="contato" value="#{contatoController.contatos}" rendered="">
+            <p:column headerText="Nome">
+                <h:outputText value="#{contato.nome}" />
+            </p:column>
+
+            <p:column headerText="Email">
+                <h:outputText value="#{contato.email}" />
+            </p:column>
+
+            <p:column headerText="Telefone">
+                <h:outputText value="#{contato.telefone}" />
+            </p:column>
+
+        </p:dataTable>
+
+    </ui:define>
+</ui:composition>
+</html>
+

@@ -1,0 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import modelo.Contato;
+
+/**
+ *
+ * @author blaze
+ */
+@ManagedBean
+@RequestScoped
+public class ContatoController {
+    private Contato contato;
+    private List<Contato> contatos;
+    public ContatoController() {
+        contato = new Contato();
+        contatos = new ArrayList<>();
+    }
+
+    public Contato getContato() {
+        return contato;
+    }
+
+    public void setContato(Contato contato) {
+        this.contato = contato;
+    }
+
+    public List<Contato> getContatos() {
+        return contatos;
+    }
+
+    public void setContatos(List<Contato> contatos) {
+        this.contatos = contatos;
+    }
+    
+    public void addContato(Contato c) {
+        contatos.add(c);
+    }
+    
+    
+}
