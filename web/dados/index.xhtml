@@ -6,35 +6,36 @@
       xmlns:p="http://primefaces.org/ui">
     <ui:composition template="/WEB-INF/include/template.xhtml">
         <ui:define name="body">
-            <h:panelGrid columns="2">
-                <h:outputText value="Nome"/>
-                <p:inputText value="#{contatoController.contato.nome}"/>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="Nome"/>
+                    <p:inputText value="#{contatoController.contato.nome}"/>
 
-                <h:outputText value="Email"/>
-                <p:inputText value="#{contatoController.contato.email}"/>
+                    <h:outputText value="Email"/>
+                    <p:inputText value="#{contatoController.contato.email}"/>
 
-                <h:outputText value="Telefone"/>
-                <p:inputText value="#{contatoController.contato.telefone}"/>
+                    <h:outputText value="Telefone"/>
+                    <p:inputText value="#{contatoController.contato.telefone}"/>
 
-                <p:commandButton value="adicionar" action="#{contatoController.addContato}" update="lista"/>
-        </h:panelGrid>
+                    <p:commandButton value="adicionar" action="#{contatoController.novoContato()}" ajax="false"/>
+                </h:panelGrid>
 
-            <p:dataTable id="lista" var="contato" value="#{contatoController.contatos}" rendered="">
-            <p:column headerText="Nome">
-                <h:outputText value="#{contato.nome}" />
-            </p:column>
+                <p:dataTable id="lista" var="contato" value="#{contatoController.contatos}">
+                    <p:column headerText="Nome">
+                        <h:outputText value="#{contato.nome}" />
+                    </p:column>
 
-            <p:column headerText="Email">
-                <h:outputText value="#{contato.email}" />
-            </p:column>
+                    <p:column headerText="Email">
+                        <h:outputText value="#{contato.email}" />
+                    </p:column>
 
-            <p:column headerText="Telefone">
-                <h:outputText value="#{contato.telefone}" />
-            </p:column>
+                    <p:column headerText="Telefone">
+                        <h:outputText value="#{contato.telefone}" />
+                    </p:column>
 
-        </p:dataTable>
-
-    </ui:define>
-</ui:composition>
+                </p:dataTable>
+            </h:form>
+        </ui:define>
+    </ui:composition>
 </html>
 

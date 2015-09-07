@@ -8,15 +8,16 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import modelo.Contato;
 
 /**
  *
  * @author blaze
  */
+
 @ManagedBean
-@RequestScoped
+@ViewScoped
 public class ContatoController {
     private Contato contato;
     private List<Contato> contatos;
@@ -41,8 +42,10 @@ public class ContatoController {
         this.contatos = contatos;
     }
     
-    public void addContato(Contato c) {
-        contatos.add(c);
+    
+    public void novoContato() {
+        contatos.add(contato);
+        contato = new Contato();
     }
     
     
