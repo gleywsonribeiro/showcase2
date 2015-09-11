@@ -22,8 +22,8 @@
                         <p:menuitem value="Home" outcome="/index.xhtml" icon="ui-icon-home"/> 
                         <p:menuitem value="Formulários" outcome="/formulario/index" icon="ui-icon-contact"/>
                         <p:submenu label="Inputs">
-                            <p:menuitem value="Com Ajax"/>
-                            <p:menuitem value="Sem Ajax"/>
+                            <p:menuitem value="Com Ajax" outcome="/input1/index"/>
+                            <p:menuitem value="Sem Ajax" outcome="/input2/index"/>
                         </p:submenu>
                         <p:menuitem value="Painel" outcome="/painel/index"/>
                         <p:menuitem value="Dados" outcome="/dados/index"/>
@@ -37,7 +37,8 @@
 
             <p:layoutUnit position="south" size="60">
                 <ui:insert name="footer">
-                    <h:outputText value="CopyRight. Todos os direitos Reservados"/>
+                    &copy;
+                    <h:outputText value="Copyright. Todos os direitos reservados"/>
                 </ui:insert>
             </p:layoutUnit>
 
