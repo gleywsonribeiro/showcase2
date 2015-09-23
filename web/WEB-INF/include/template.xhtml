@@ -28,8 +28,8 @@
                         <p:menuitem value="Painel" outcome="/painel/index"/>
                         <p:menuitem value="Dados" outcome="/dados/index"/>
                         <p:menuitem value="Gráficos" outcome="/grafico/index"/>
-                        <p:menuitem value="Diálogo"/>
-                        <p:menuitem value="Outros"/>
+                        <p:menuitem value="Diálogo" outcome="/overlay/index"/>
+                        <p:menuitem value="Outros" outcome="/outros/index"/>
                     </p:menubar>
                     <!--</ui:insert>-->
                 </h:form>
@@ -39,6 +39,8 @@
                 <ui:insert name="footer">
                     &copy;
                     <h:outputText value="Copyright. Todos os direitos reservados"/>
+                    <p:separator/>
+                    <p:clock pattern="HH:mm:ss"/>
                 </ui:insert>
             </p:layoutUnit>
 

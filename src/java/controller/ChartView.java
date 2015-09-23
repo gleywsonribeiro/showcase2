@@ -47,23 +47,21 @@ public class ChartView {
         LineChartSeries series1 = new LineChartSeries();
         series1.setLabel("Series 1");
 
-        series1.set(1, 2);
-        series1.set(2, 1);
-        series1.set(3, 3);
-        series1.set(4, 6);
-        series1.set(5, 8);
-
         LineChartSeries series2 = new LineChartSeries();
         series2.setLabel("Series 2");
 
-        series2.set(1, 6);
-        series2.set(2, 3);
-        series2.set(3, 2);
-        series2.set(4, 7);
-        series2.set(5, 9);
+        LineChartSeries funcao = new LineChartSeries();
+        funcao.setLabel("Função");
+        
+        for(int i = -10; i <= 10; i++) {
+            series1.set(i, i*i);
+            series2.set(i, 2*i);
+            funcao.set(i, 5 + Math.sin(i));
+        }
 
         model.addSeries(series1);
         model.addSeries(series2);
+        model.addSeries(funcao);
 
         return model;
     }

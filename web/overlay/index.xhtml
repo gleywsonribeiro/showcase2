@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/WEB-INF/include/template.xhtml">
+        <ui:define name="body">
+            <h:form>
+                <h:outputLink value="javascript:void(0)" onclick="PF('dialog').show();" title="login">
+                    <p:graphicImage library="imagens" name="key.ico" width="2%" height="2%"/>
+                </h:outputLink>
+
+                <p:dialog header="Login" widgetVar="dialog" resizable="false">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:outputLabel for="username" value="Username:" />
+                        <p:inputText id="username" value="" required="true" label="username" />
+
+                        <h:outputLabel for="password" value="Password:" />
+                        <p:password id="password" value="" required="true" label="password" />
+
+                        <f:facet name="footer">
+                            <p:button value="Login" outcome="/index.xhtml"/>
+                        </f:facet>  
+                    </h:panelGrid>
+                </p:dialog>
+                <p:separator/>
+                <p:dialog header="Diálogo" widgetVar="dlg" minimizable="true" maximizable="true">
+                    <h:outputText value="This Dialog can be Maximized an Minimized!" />
+                </p:dialog>
+                <p:commandButton value="Show Dialog" onclick="PF('dlg').show();" type="button" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

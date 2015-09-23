@@ -22,9 +22,18 @@
 }
 
 .home {  
-    background-image: url(../resources/imagens/house.ico) !important;  
-    width: 16px;
-    height: 16px;  
+    background-image: url(../resources/imagens/house.png) !important;  
+    width: 15px;
+    height: 15px;  
+    float: bottom;  
+    margin-right: 0px;
+}  
+
+
+.logopm {  
+    background-image: url(../resources/imagens/logc.png) !important;  
+    width: 14px;
+    height: 18px;  
     float: bottom;  
     margin-right: 0px;
 }  
