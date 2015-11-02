@@ -14,6 +14,21 @@
                     <h:outputText id="display" value="#{ajaxController.nome}" />
                 </h:panelGrid>
             </h:form>
+            <h:form>
+                <p:panelGrid columns="2">
+                    <h:outputText value="a"/>
+                    <p:inputText value="#{equacaoController.a}"/>
+                    
+                    <h:outputText value="b"/>
+                    <p:inputText value="#{equacaoController.b}"/>
+                    
+                    <h:outputText value="c"/>
+                    <p:inputText value="#{equacaoController.c}"/>
+                    
+                    <p:commandButton value="Resolver" update="solucao"/>
+                    <h:outputText id="solucao" value="${equacaoController.resultado}"/>
+                </p:panelGrid>
+            </h:form>
         </ui:define>
     </ui:composition>
 </html>
