@@ -14,7 +14,24 @@
                             sul
                         </p:layoutUnit>
                         <p:layoutUnit position="center">
-                            Centro-Norte
+                            <h:form>
+                                <p:panelGrid columns="2">
+                                    <f:facet name="header">
+                                        Cálculo Fatorial
+                                    </f:facet>
+                                    <h:outputLabel for="valor" value="Entre com um valor:" style="font-weight:bold" />
+                                    <p:inputText id="valor" value="#{mathController.fatorial.fator}" />
+                                    
+                                    <h:outputText value="Algoritmo:"/>
+                                    <p:selectOneMenu value="#{mathController.fatorial.tipo}">
+                                        <f:selectItem itemLabel="Selecione" itemValue=""/>
+                                        <f:selectItems value="#{mathController.tiposFat}"/>
+                                    </p:selectOneMenu>
+                                    
+                                    <p:commandButton value="ok" update="display" icon="ui-icon-check" />
+                                    <h:outputText id="display" value="#{mathController.fatorial.fatorial}" />
+                                </p:panelGrid>
+                            </h:form>
                         </p:layoutUnit>
                     </p:layout>
                 </p:layoutUnit>
