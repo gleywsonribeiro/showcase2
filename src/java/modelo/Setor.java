@@ -6,33 +6,42 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author gleywson
  */
 @Entity
-public class Contato implements Serializable {
+public class Setor implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id; 
     
     @Column(nullable = false)
-    private String descricao;
+    private String nome;
     
-    @Column(nullable = false, length = 5)
-    private String ramal;
+    @OneToMany(mappedBy = "setor", fetch = FetchType.LAZY)
+    private List<Contato> contatos = new ArrayList<>();
+    
+    public String getNome() {
+        return nome;
+    }
 
-    @ManyToOne
-    private Setor setor;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
     
+
     public Long getId() {
         return id;
     }
@@ -40,30 +49,9 @@ public class Contato implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public String getRamal() {
-        return ramal;
-    }
-
-    public void setRamal(String ramal) {
-        this.ramal = ramal;
-    }
-
-    public Setor getSetor() {
-        return setor;
-    }
-
-    public void setSetor(Setor setor) {
-        this.setor = setor;
+    public List<Contato> getContatos() {
+        return contatos;
     }
 
     
@@ -78,10 +66,10 @@ public class Contato implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Contato)) {
+        if (!(object instanceof Setor)) {
             return false;
         }
-        Contato other = (Contato) object;
+        Setor other = (Setor) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -90,7 +78,7 @@ public class Contato implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Contato[ id=" + id + " ]";
+        return "modelo.Setor[ id=" + id + " ]";
     }
     
 }

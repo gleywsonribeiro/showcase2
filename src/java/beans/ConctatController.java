@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package beans;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +18,10 @@ import modelo.Contato;
 
 @ManagedBean
 @ViewScoped
-public class ContatoController {
+public class ConctatController {
     private Contato contato;
     private List<Contato> contatos;
-    public ContatoController() {
+    public ConctatController() {
         contato = new Contato();
         contatos = new ArrayList<>();
     }
