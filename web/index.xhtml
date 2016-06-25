@@ -8,7 +8,9 @@
     <ui:composition template="/WEB-INF/include/template.xhtml">
 
         <ui:define name="body">
+            <p:log id="log" />
             <h:outputText value="#{inicioController.saudacao()}! Seja bem vindo terráqueo!"/>
+            <p:calendar mode="inline"/>
         </ui:define>
     </ui:composition>
 

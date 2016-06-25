@@ -22,6 +22,14 @@
                 </p:panelGrid>
 
                 <p:separator/>
+                <h:form>
+                    <p:focus for="terminal" />
+
+                    <p:terminal id="terminal" widgetVar="term" commandHandler="#{terminal.comando}"
+                                welcomeMessage="Bem vindo ao terminal do PrimeFaces" />
+
+                    <p:commandButton type="button" value="Clear" icon="ui-icon-trash" onclick="PF('term').clear()" style="margin-top:10px"/>
+                </h:form>
             </p:panel>
         </ui:define>
     </ui:composition>

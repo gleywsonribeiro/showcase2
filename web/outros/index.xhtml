@@ -21,13 +21,13 @@
                                     </f:facet>
                                     <h:outputLabel for="valor" value="Entre com um valor:" style="font-weight:bold" />
                                     <p:inputText id="valor" value="#{mathController.fatorial.fator}" />
-                                    
+
                                     <h:outputText value="Algoritmo:"/>
                                     <p:selectOneMenu value="#{mathController.fatorial.tipo}">
                                         <f:selectItem itemLabel="Selecione" itemValue=""/>
                                         <f:selectItems value="#{mathController.tiposFat}"/>
                                     </p:selectOneMenu>
-                                    
+
                                     <p:commandButton value="ok" update="display" icon="ui-icon-check" />
                                     <h:outputText id="display" value="#{mathController.fatorial.fatorial}" />
                                 </p:panelGrid>
@@ -47,7 +47,73 @@
                                     centro leste
                                 </p:layoutUnit>
                                 <p:layoutUnit position="center">
-                                    centro oeste
+                                    <h:panelGrid columns="4" cellpadding="5">
+                                        <p:panel id="blind" header="Blind">
+                                            <h:outputText value="click" />
+                                            <p:effect type="blind" event="click">
+                                                <f:param name="direction" value="'horizontal'" />
+                                            </p:effect>
+                                        </p:panel>
+
+                                        <p:panel id="clip" header="Clip">
+                                            <h:outputText value="click" />
+                                            <p:effect type="clip" event="click" />
+                                        </p:panel>
+
+                                        <p:panel id="drop" header="Drop">
+                                            <h:outputText value="click" />
+                                            <p:effect type="drop" event="click" />
+                                        </p:panel>
+
+                                        <p:panel id="explode" header="Explode">
+                                            <h:outputText value="click" />
+                                            <p:effect type="explode" event="click" />
+                                        </p:panel>
+
+                                        <p:panel id="fold" header="Fold">
+                                            <h:outputText value="doubleclick" />
+                                            <p:effect type="fold" event="dblclick" />
+                                        </p:panel>
+
+                                        <p:panel id="puff" header="Puff">
+                                            <h:outputText value="doubleclick" />
+                                            <p:effect type="puff" event="dblclick" />
+                                        </p:panel>
+
+                                        <p:panel id="slide" header="Slide">
+                                            <h:outputText value="doubleclick" />
+                                            <p:effect type="slide" event="dblclick" />
+                                        </p:panel>
+
+                                        <p:panel id="scale" header="Scale">
+                                            <h:outputText value="doubleclick" />
+                                            <p:effect type="scale" event="dblclick">
+                                                <f:param name="percent" value="90" />
+                                            </p:effect>
+                                        </p:panel>
+
+                                        <p:panel id="bounce" header="Bounce">
+                                            <h:outputText value="click" />
+                                            <p:effect type="bounce" event="click" />
+                                        </p:panel>
+
+                                        <p:panel id="pulsate" header="Pulsate">
+                                            <h:outputText value="click" />
+                                            <p:effect type="pulsate" event="click" />
+                                        </p:panel>
+
+                                        <p:panel id="shake" header="Shake">
+                                            <h:outputText value="click" />
+                                            <p:effect type="shake" event="click" />
+                                        </p:panel>
+
+                                        <p:panel id="size" header="Size">
+                                            <h:outputText value="click" />
+                                            <p:effect type="size" event="click">
+                                                <f:param name="to" value="{width: 200,height: 60}" />
+                                            </p:effect>
+                                        </p:panel>
+                                    </h:panelGrid>
                                 </p:layoutUnit>
                             </p:layout>
                         </p:layoutUnit>
